@@ -703,6 +703,7 @@ INSTANTIATE_TEST_SUITE_P(
         "spv.coopmatKHR_Error.comp",
         "spv.coopmatKHR_constructor.comp",
         "spv.coopmatKHR_constructorError.comp",
+        "spv.coopmatKHR_matmuladd_Error.comp",
         "spv.coopvec.comp",
         "spv.coopvec2.comp",
         "spv.coopvecloadstore.comp",
@@ -795,6 +796,12 @@ INSTANTIATE_TEST_SUITE_P(
         "spv.nv.hitobject-allops.rchit",
         "spv.nv.hitobject-allops.rmiss",
 
+        // SPV_EXT_shader_execution_reorder
+
+        "spv.ext.hitobject-errors.rgen",
+        "spv.ext.hitobject-allops.rgen",
+        "spv.ext.hitobject-allops.rchit",
+        "spv.ext.hitobject-allops.rmiss",
 
         // SPV_NV_displacment_micromap
 
@@ -1117,6 +1124,8 @@ INSTANTIATE_TEST_SUITE_P(
     Glsl, GlslNonSemanticShaderDebugInfoVulkanLatestTest,
     ::testing::ValuesIn(std::vector<std::string>({
         "spv.debuginfo.rt_types.glsl.rgen",
+        "spv.debuginfo.rt_nv_builtins.glsl.rahit",
+        "spv.debuginfo.rt_ext_builtins.glsl.rahit",
     })),
     FileNameAsCustomTestSuffix
 );
